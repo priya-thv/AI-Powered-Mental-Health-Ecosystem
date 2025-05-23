@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Wellness Dashboard</title>
+  <link rel="stylesheet" href="dashboardstyle.css">
+</head>
+<body>
+  <div class="background-overlay"></div>
+
+  <header class="profile-corner">
+    <div class="profile-info">
+      <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Profile" class="profile-pic">
+      <span class="username" onclick="window.location.href='profile.html'" style="cursor: pointer;">Hello, Friend!</span>
+
+    </div>
+  </header>
+
+  <main class="dashboard">
+    <button id="chatbotbtn" class="box">Virtual Companion</button>
+    <button id="meditationbtn" class="box">Mindful Breathing</button>
+    <button id="reflectivebtn" class="box center-box">Reflective Writing</button>
+    <button id="ritualsbtn" class="box">Wellness Rituals</button>
+    <button id="soundsbtn" class="box">Healing Sounds</button>
+  </main>
+
+  <!-- ✅ Add this line -->
+  <script type="module" src="dashboard.js"></script>
+</body>
+</html>

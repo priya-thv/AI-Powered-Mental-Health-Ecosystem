@@ -1,0 +1,54 @@
+/* ---------- 1. Base body styles ---------- */
+body {
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+  position: relative;          /* create a stacking-context */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 2rem 1rem;
+  overflow-x: hidden;          /* keep horizontal scroll away */
+}
+
+/* ---------- 2. Blurred background layer ---------- */
+body::before {
+  content: "";
+  position: fixed;             /* stick to the viewport */
+  inset: 0;                    /* shorthand for top:0; right:0; bottom:0; left:0 */
+  background: url('images/chatbt.webp') center/cover no-repeat;
+  filter: blur(10px);          /* 👈 tweak blur radius to taste */
+  z-index: -2;                 /* sit behind everything */
+}
+
+/* ---------- 3. Optional soft-white overlay (readability) ---------- */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(255,255,255,0.45);  /* 0 = transparent, 1 = solid white */
+  z-index: -1;                         /* between blur layer & content */
+}
+
+/* ---------- 4. Your existing content styles ---------- */
+h1 {
+  text-align: center;
+  font-size: 2.3rem;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+#vf-chatbot {
+  width: 100%;
+  max-width: 500px;
+  height: 550px;
+  border-radius: 20px;
+  background: #fff;
+  overflow: hidden;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.12);
+}
+
+@media (max-width: 500px) {
+  #vf-chatbot { height: 520px; }
+}

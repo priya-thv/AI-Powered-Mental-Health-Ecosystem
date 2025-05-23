@@ -1,0 +1,37 @@
+body {
+  background: url('images/sound.png') ;
+  background-size: cover;
+  font-family: 'Comic Sans MS', sans-serif;
+  color: #fff;
+  text-align: center;
+}
+
+.sound-search {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  margin: 50px auto;
+  max-width: 600px;
+  border-radius: 15px;
+}
+
+#musicInput {
+  padding: 10px;
+  width: 60%;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+
+#generateBtn {
+  padding: 10px 20px;
+  border: none;
+  background-color: pink;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.video-card {
+  background: #fff3;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 15px 0;
+}

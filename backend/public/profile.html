@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Your Profile</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="profile.css" />
+</head>
+<body>
+  <div class="profile-card">
+    <h2>🌸 Your Profile</h2>
+    <div id="loadingText">Loading profile...</div>
+
+    <form id="profileForm">
+      <label for="username">Username</label>
+      <input type="text" id="username" readonly />
+
+      <label for="name">Full&nbsp;Name</label>
+      <input type="text" id="name" placeholder="Your full name" />
+
+      <label for="bio">Short&nbsp;Bio</label>
+      <textarea id="bio" placeholder="Tell us a little about yourself..."></textarea>
+
+      <label for="mood">Preferred&nbsp;Mood&nbsp;Theme</label>
+      <select id="mood">
+        <option value="calm">Calm &amp; Soothing</option>
+        <option value="uplifting">Uplifting</option>
+        <option value="neutral">Neutral</option>
+      </select>
+
+      <button type="submit">Save&nbsp;Changes</button>
+    </form>
+  </div>
+
+  <script type="module" src="profile.js"></script>
+</body>
+</html>

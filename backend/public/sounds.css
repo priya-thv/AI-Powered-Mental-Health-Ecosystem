@@ -1,0 +1,41 @@
+body {
+    background:url('images/sound.png');
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+    padding: 40px;
+  }
+  
+  .container {
+    max-width: 500px;
+    margin: auto;
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  }
+  
+  input {
+    padding: 12px;
+    width: 80%;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    margin-top: 20px;
+    font-size: 16px;
+  }
+  
+  button {
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: #6dd5ed;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  #responseBox {
+    margin-top: 30px;
+    font-size: 18px;
+  }
+  
