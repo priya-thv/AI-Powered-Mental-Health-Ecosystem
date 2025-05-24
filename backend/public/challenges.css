@@ -1,0 +1,63 @@
+ body {
+            font-family: 'Arial', sans-serif;
+            background: url("images/challenges\ bg.png.webp") no-repeat center center fixed;
+            background-size: cover;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .challenge-container {
+            max-width: 500px;
+            padding: 20px;
+            background: rgba(45, 43, 43, 0.4);
+            border-radius: 20px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        h1, h2, p {
+            color: #2C3E50;
+            font-size: 2rem;
+    
+        }
+        p {
+            text-shadow: 2px 2px 4px rgb(246, 244, 244)
+        }
+
+        #complete-btn {
+            background: #ff6f61;
+            color: white;
+            padding: 12px 18px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+
+        #complete-btn:hover {
+            background: #ff3d2e;
+        }
+
+        .go-back-btn {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: purple;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .go-back-btn:hover {
+            background: #2575fc;
+        }
