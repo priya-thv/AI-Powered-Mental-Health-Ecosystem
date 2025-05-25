@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Congratulations!</title>
+    
+</head>
+<body>
+
+    <div class="container">
+        <h2>🎉 Congratulations! 🎉</h2>
+        <p>You have successfully completed your 30-day self-love challenge!</p>
+        <button class="restart" onclick="restartChallenge()">🔄 Restart Challenges</button>
+        <button class="go-back" onclick="window.location.href = 'well being hub.html'">⬅️ Go Back</button>
+    </div>
+
+    <script>
+        function restartChallenge() {
+            localStorage.setItem("progress", 0);
+            window.location.href = "challenges.html";
+        }
+    </script>
+
+</body>
+</html>
