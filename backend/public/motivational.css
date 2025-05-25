@@ -1,0 +1,207 @@
+body {
+    background-image: url("images/motivational\ quotes.png.webp");
+    background-size: cover;  /* Enlarges while maintaining aspect ratio */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents tiling */
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    background-color: #f3f8ff;
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+}
+h1 {
+    font-size: 4rem;
+    font-weight: bold ;
+    color:white;
+    font-family: 'Times New Roman', Times, serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+P {
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+} 
+
+
+/* Container for Centering */
+/* Main container */
+.container {
+    max-width: 600px;
+    margin: auto; /* Centers the container */
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Ensures inner elements are centered */
+}
+
+/* Carousel container */
+.carousel-container {
+    width: 100%;
+    max-width: 800px; /* Wider carousel */
+    max-height: 680px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 20px auto; /* Centers the carousel */
+    position: relative;
+}
+
+/* Parent container to center everything */
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Ensure Slides Fill Space */
+.carousel-slide {
+    display: flex;
+    transition: transform 0.6s ease-in-out;
+    width: 100%;
+    height: 100%;
+}
+
+/* Ensure Each Slide is Full Width */
+.slide {
+    width: 120%;
+    height: 800px;
+    flex: 0 0 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size:  3rem;
+    font-weight: bold;
+    font-family: "Times New Roman", Times, serif;
+    background-size: contain !important; /* Ensure full image fits */
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    box-sizing: border-box;
+    
+}
+
+/* Remove Dark Overlay if Needed */
+.slide::before {
+    display: none; /* Remove overlay */
+}
+
+/* Background Images for Each Slide */
+.slide:nth-child(1) { background: url('images/naruto1.png.webp') no-repeat center center/cover; }
+.slide:nth-child(2) { background: url('images/cat1.png.webp') no-repeat center center/cover; }
+.slide:nth-child(3) { background: url('images/grow\ like\ bonsai.png.webp') no-repeat center center/cover; }
+.slide:nth-child(4) { background: url('images/nakama.png.webp') no-repeat center center/cover; }
+.slide:nth-child(5) { background: url('images/healing.png.webp') no-repeat center center/cover; }
+.slide:nth-child(6) { background: url('images/CHIRO.PNG.webp') no-repeat center center/cover; }
+.slide:nth-child(7) {background: url("images/mountain.png.webp");}
+.slide:nth-child(8) {background:url("images/goku.png.webp")}
+.slide:nth-child(9) {background:url("images/sunrise.png.webp")}
+.slide:nth-child(10) {background: url("images/luffy.png.webp");}
+.slide:nth-child(11) {background:url("images/flowing\ water.png.webp");}
+.slide:nth-child(12) {background: url("images/deku.png.webp");}
+.slide:nth-child(13) {background:url("images/roots.png.webp")}
+.slide:nth-child(14) {background:url("images/tanjiro.png.webp")}
+.slide:nth-child(15) {background:url("images/itachi.png.webp")}
+.slide:nth-child(16) {background:url('images/firefly.png.webp');}
+.slide:nth-child(17) {background:url('images/stars.png.webp');}
+.slide:nth-child(18) {background:url('images/phoenix.png.webp');}
+.slide:nth-child(19) {background:url('images/wind.png.webp');}
+.slide:nth-child(20) {background:url('images/raindrop.png.webp');}
+.slide:nth-child(21) {background:url('images/storm.png.webp');}
+.slide:nth-child(22) {background:url('images/cherry.png.png');}
+.slide:nth-child(23) {background:url('images/bamboo.png.webp');}
+.slide:nth-child(24) {background:url('images/moon.png.webp');}
+.slide:nth-child(25) {background:url('images/ocean.png.webp');}
+.slide:nth-child(26) {background:url('images/pokemon.png.webp');}
+.slide:nth-child(27) {background:url('images/lantern.png.webp');}
+.slide:nth-child(28) {background:url('images/ninja.png.webp');}
+.slide:nth-child(29) {background:url('images/falcon.png.webp');}
+.slide:nth-child(30) {background:url('images/lotus.png.webp');}
+
+
+
+
+/* Adjust Navigation Buttons */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 12px 16px;
+    border: none;
+    cursor: pointer;
+    font-size: 22px;
+    border-radius: 5px;
+    z-index: 10;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease-in-out;
+}
+
+.prev { left: 20px; }
+.next { right: 20px; }
+
+/* Show buttons only when hovering over the carousel */
+.carousel-container:hover .prev,
+.carousel-container:hover .next {
+    opacity: 1;
+}
+
+
+@media (max-width: 768px) {
+    .carousel-container {
+        max-width: 100%; /* Allow full width */
+    }
+    .slide {
+        min-height: 250px; /* Adjust height */
+        font-size: 20px;
+    }
+}
+
+.challenges-button {
+    background:linear-gradient(135deg, #6a207c, #1053ce); /* Orange button */
+    color: white;
+    padding: 12px 20px;
+    font-size: 1.8rem;
+    font-family: 'Times New Roman', Times, serif;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.challenges-button:hover {
+    background-color: #e68900; /* Darker shade for hover effect */
+}
+.go-back-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background:linear-gradient(135deg, #6a207c, #1053ce);
+    color: white;
+    border: none;
+    padding: 10px 15px;  /* Adjust padding */
+    font-size: 14px;     /* Smaller font size */
+    font-family: 'Times New Roman', Times, serif;
+    border-radius: 5px;  /* Rounded corners */
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    width: auto;   /* Prevents it from expanding */
+    min-width: 100px;  /* Ensures a reasonable size */
+    max-width: 200px;  /* Prevents full-width stretching */
+    text-align: center;
+    display: inline-block;  /* Ensures proper button sizing */
+}
+
+.go-back-btn:hover {
+    background: #bb1774; /* Blue gradient */
+}
+
+
+
+
