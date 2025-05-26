@@ -56,8 +56,9 @@ app.use('/api/auth', authRoutes);
 app.use('/api/chat',authmiddleware, chatRoutes);
 
 // After other app.use() calls
-app.use('/api/sounds', soundsRoutes);
+app.use('/api/music', soundsRoutes);
 app.use('/api/meditation', meditationRoutes);
+console.log('✔️ Meditation routes mounted at /api/meditation');
 // ... other app.use() routes here
 app.use('/api', profileRoutes);
 

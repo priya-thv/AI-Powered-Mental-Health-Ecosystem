@@ -1,89 +1,49 @@
-// // backend/musicGenerator.js
-// import fetch from "node-fetch";
+// routes/sounds.routes.js
+import express from 'express';
+import axios from 'axios';
+import dotenv from 'dotenv';
+dotenv.config();
 
-// const MUBERT_API_KEY = "YOUR_MUBERT_API_KEY"; // Replace with actual key
+const router = express.Router();
 
-// const moodMap = {
-//   anxious: "calm",
-//   tired: "dreamy",
-//   sad: "hopeful",
-//   happy: "uplifting",
-//   angry: "focus",
-//   peaceful: "healing"
-// };
-
-// export async function generateMusic(emotion) {
-//   const tag = moodMap[emotion.toLowerCase()] || "relax";
-
-//   try {
-//     const response = await fetch("https://api.mubert.com/v2/AI/music", {
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json",
-//         "Authorization": `Bearer ${MUBERT_API_KEY}`
-//       },
-//       body: JSON.stringify({
-//         mood: tag,
-//         duration: 120
-//       })
-//     });
-
-//     const result = await response.json();
-//     if (result && result.music_url) {
-//       return { url: result.music_url };
-//     } else {
-//       return { error: "No music URL returned from Mubert API." };
-//     }
-//   } catch (err) {
-//     console.error("Error generating music:", err);
-//     return { error: "Failed to generate music." };
-//   }
-// }
-
-// export default router;
-
-
-// backend/musicGenerator.js (ES Module Version)
-import { Router } from "express";
-import fetch from "node-fetch";
-
-const MUBERT_API_KEY = "YOUR_MUBERT_API_KEY"; // Replace with actual key
-
-const moodMap = {
-  anxious: "calm",
-  tired: "dreamy",
-  sad: "hopeful",
-  happy: "uplifting",
-  angry: "focus",
-  peaceful: "healing"
+// Emotion to YouTube keyword mapping
+const emotionToQuery = {
+  anxious: "calming meditation music",
+  tired: "deep sleep music",
+  sad: "soothing piano music",
+  happy: "uplifting meditation music",
+  angry: "relaxing instrumental music",
+  peaceful: "nature sounds meditation",
+  hopeful: "healing music"
 };
 
-export async function generateMusic(emotion) {
-  const tag = moodMap[emotion.toLowerCase()] || "relax";
+router.get('/youtube-music', async (req, res) => {
+  const emotion = req.query.emotion?.toLowerCase();
+
+  const searchQuery = emotionToQuery[emotion] || `${emotion} healing music`;
 
   try {
-    const response = await fetch("https://api.mubert.com/v2/AI/music", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": `Bearer ${MUBERT_API_KEY}`
+    const response = await axios.get('https://www.googleapis.com/youtube/v3/search', {
+      params: {
+        part: 'snippet',
+        q: searchQuery,
+        type: 'video',
+        maxResults: 5,
+        key: process.env.YOUTUBE_API_KEY,
       },
-      body: JSON.stringify({
-        mood: tag,
-        duration: 120
-      })
     });
 
-    const result = await response.json();
-    if (result && result.music_url) {
-      return { url: result.music_url };
-    } else {
-      return { error: "No music URL returned from Mubert API." };
-    }
-  } catch (err) {
-    console.error("Error generating music:", err);
-    return { error: "Failed to generate music." };
-  }
-}
+    const videos = response.data.items.map(item => ({
+      title: item.snippet.title,
+      videoId: item.id.videoId,
+      thumbnail: item.snippet.thumbnails.medium.url,
+    }));
 
-export default Router;
+    res.json({ videos });
+  } catch (error) {
+    console.error('YouTube API error:', error.response?.data || error.message);
+    res.status(500).json({ error: 'Failed to fetch YouTube videos' });
+  }
+});
+
+export default router;

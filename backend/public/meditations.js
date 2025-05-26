@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
   
       try {
-        const res = await fetch(`/api/sounds/search-sounds?query=${encodeURIComponent(query)}`);
+        const res = await fetch(`/api/meditation/search-meditation?query=${encodeURIComponent(query)}`);
         const data = await res.json();
   
         if (!res.ok || !data.videos) {
