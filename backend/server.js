@@ -47,9 +47,13 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-app.get('/', (req, res) => {
+app.use(express.static(join(__dirname, 'public')));
+
+// For all other routes (like when refreshing on /about or /chat)
+app.get('*', (req, res) => {
   res.sendFile(join(__dirname, 'public', 'index.html'));
 });
+
 
 // API Routes
 app.use('/api/auth', authRoutes);
