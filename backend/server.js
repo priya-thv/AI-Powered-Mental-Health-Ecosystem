@@ -49,10 +49,6 @@ const __dirname = dirname(__filename);
 
 app.use(express.static(join(__dirname, 'public')));
 
-// For all other routes (like when refreshing on /about or /chat)
-app.get('*', (req, res) => {
-  res.sendFile(join(__dirname, 'public', 'index.html'));
-});
 
 
 // API Routes
@@ -65,6 +61,11 @@ app.use('/api/meditation', meditationRoutes);
 console.log('✔️ Meditation routes mounted at /api/meditation');
 // ... other app.use() routes here
 app.use('/api', profileRoutes);
+
+// For all other routes (like when refreshing on /about or /chat)
+app.get('*', (req, res) => {
+  res.sendFile(join(__dirname, 'public', 'index.html'));
+});
 
 // Socket.IO connection
 io.on('connection', (socket) => {
