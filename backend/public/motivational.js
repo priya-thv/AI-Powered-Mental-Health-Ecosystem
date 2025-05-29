@@ -23,7 +23,7 @@ document.getElementById("challenges-btn").addEventListener("click", function() {
 });
 
 function goBack() {
-            window.location.href="tips.html";
+            window.location.href="rituals.html";
         }
 
     

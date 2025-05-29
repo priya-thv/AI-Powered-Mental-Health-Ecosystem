@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- <!DOCTYPE html>
+< lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +7,7 @@
    <link rel="stylesheet" href="challenges.css">
 </head>
 <body>
+    <div class="content"></div>
     <button class="go-back-btn" onclick="goBack()">⬅ Go Back</button>
     <h1>Self-Love Challenge</h1>
     <p>Each challenge is a step closer to self-love. Complete 30 days to unlock the next month!</p>
@@ -17,8 +18,37 @@
         <button id="complete-btn">✅ Mark as Complete</button>
         <p>Progress: <span id="progress-count">0</span>/30 days</p>
     </div>
-<script src="challenge.js"></script>
+
+<script src="challenges.js"></script>
 </body>
 </html>
 
+ -->
 
+ <!DOCTYPE html>
+<html lang="en"> <!-- not < lang="en"> -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Self-Love Challenge</title>
+    <link rel="stylesheet" href="challenges.css">
+</head>
+<body>
+    <div class="background-blur"></div> <!-- background layer -->
+
+    <div class="content">
+        <h1>Self-Love Challenge</h1>
+        <p>Each challenge is a step closer to self-love. Complete 30 days to unlock the next month!</p>
+
+        <div class="challenge-container">
+            <h2>🎯 Your Challenge</h2>
+            <p id="challenge-text">Loading...</p>
+            <button id="complete-btn">✅ Mark as Complete</button>
+            <p>Progress: <span id="progress-count">0</span>/30 days</p>
+        </div>
+        <button class="go-back-btn" onclick="goBack()">⬅ Go Back</button>
+    </div>
+
+    <script src="challenges.js"></script>
+</body>
+</html>

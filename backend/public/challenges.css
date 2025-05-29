@@ -1,63 +1,71 @@
- body {
-            font-family: 'Arial', sans-serif;
-            background: url("images/challenges\ bg.png.webp") no-repeat center center fixed;
-            background-size: cover;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-        }
 
-        .challenge-container {
-            max-width: 500px;
-            padding: 20px;
-            background: rgba(45, 43, 43, 0.4);
-            border-radius: 20px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-        }
 
-        h1, h2, p {
-            color: #2C3E50;
-            font-size: 2rem;
-    
-        }
-        p {
-            text-shadow: 2px 2px 4px rgb(246, 244, 244)
-        }
+/* Fullscreen blurred background image */
+.background-blur {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('images/fox.jpg') ;
+  filter: blur(2px);
+  z-index: -1;
+}
 
-        #complete-btn {
-            background: #ff6f61;
-            color: white;
-            padding: 12px 18px;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: 0.3s;
-        }
+/* Content wrapper */
+.content {
+  position: relative;
+  z-index: 1;
+  padding: 40px;
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+  color: #333;
+}
 
-        #complete-btn:hover {
-            background: #ff3d2e;
-        }
+/* Golden-bordered white card */
+.challenge-container {
+  background: rgba(255, 255, 255,0.25); /* translucent white */
+  border: 2px solid rgb(247, 217, 51);
+  border-radius: 20px;
+  padding: 30px;
+  margin-top: 30px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px); /* adds a subtle glassy effect */
+  -webkit-backdrop-filter: blur(5px); /* Safari support */
+}
 
-        .go-back-btn {
-            position: absolute;
-            bottom: 20px;
-            left: 20px;
-            background: purple;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
 
-        .go-back-btn:hover {
-            background: #2575fc;
-        }
+/* Button style */
+#complete-btn, .go-back-btn {
+  background-color: rgb(243, 209, 17);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 10px;
+  margin-top: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#complete-btn:hover, .go-back-btn:hover {
+  background-color: darkgoldenrod;
+}
+
+/* Heading */
+h1 {
+  font-size: 2.5rem;
+  color: #222;
+}
+
+/* Secondary heading */
+h2 {
+  margin-bottom: 10px;
+  color: #444;
+}
+
+p{
+    font-size: 1.5rem;
+    color: black;
+}

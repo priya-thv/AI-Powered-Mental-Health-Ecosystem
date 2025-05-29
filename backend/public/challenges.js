@@ -230,7 +230,9 @@ const challengeSets = [
         }
     
         document.getElementById("complete-btn").addEventListener("click", function () {
+          if(progress<30){
             progress++;
+          }
             localStorage.setItem("progress", progress);
             loadChallenge();
         });
