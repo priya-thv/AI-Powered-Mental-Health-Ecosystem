@@ -31,7 +31,7 @@
 - **Database**: MongoDB Atlas  
 - **AI Engine**: OpenAI / Voiceflow AI Agent  
 - **Authentication**: JWT  
-- **Hosting**: (e.g., Heroku, Vercel, or Netlify)
+- **Hosting**: Render
 
 ---
 
