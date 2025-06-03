@@ -5,29 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login to ChatWorld!</title>
     <link rel="stylesheet" href="loginstyle.css">
-    <style>
-        /* Inline style just for the logout button */
-        .logout-btn {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background-color: black;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            font-size: 14px;
-            border-radius: 5px;
-        }
 
-        .logout-btn:hover {
-            background-color: #333;
-        }
-    </style>
 </head>
 <body>
-    <!-- Logout Button -->
-    <button class="logout-btn" id="logoutBtn">Logout</button>
+   
 
     <div class="login-container">
         <h2>Welcome Back!</h2>
@@ -40,14 +21,6 @@
     </div>
 
     <script type="module" src="./loginjs.js"></script>
-    <script>
-        // Simple logout logic (can be expanded based on how login is handled)
-        document.getElementById('logoutBtn').addEventListener('click', () => {
-            // Clear any auth tokens or session info if stored
-            localStorage.removeItem('token'); // for example
-            alert("You have been logged out.");
-            window.location.reload(); // or redirect somewhere
-        });
-    </script>
+    
 </body>
 </html>
