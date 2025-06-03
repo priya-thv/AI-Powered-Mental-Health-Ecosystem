@@ -30,12 +30,13 @@
 
 
 import { requireAuth } from './auth.js';
+import { apiFetch } from './helpers.js'; // import your fetch helper
 
 document.addEventListener('DOMContentLoaded', () => {
   const token = requireAuth();
   if (!token) return;
 
-  // 🚀 Navigation buttons
+  // Navigation buttons
   document.getElementById('chatbotbtn')?.addEventListener('click', () => {
     console.log('TOKEN:', token);
     window.location.href = '/chatbot.html';
@@ -57,34 +58,34 @@ document.addEventListener('DOMContentLoaded', () => {
     window.location.href = '/sound.html';
   });
 
-  // 🔐 Logout Button
+  // Logout button using apiFetch (like your login code)
   const logoutBtn = document.getElementById('logoutBtn');
   if (logoutBtn) {
     logoutBtn.addEventListener('click', async () => {
       try {
-        const response = await fetch('/logout', {
+        const response = await apiFetch('/api/auth/logout', {
           method: 'POST',
-          credentials: 'include', // Send cookies with the request
-          headers: {
-            'Content-Type': 'application/json',
-          },
+          headers: { 'Content-Type': 'application/json' },
+          // Add credentials if your apiFetch supports it and you need it for cookies:
+          // credentials: 'include',
         });
 
+        const data = await response.json();
+
         if (response.ok) {
-          // 🧹 Clean up frontend session
+          // Remove user session info from localStorage
           localStorage.removeItem('token');
           localStorage.removeItem('fullname');
           localStorage.removeItem('email');
 
           alert('Logged out successfully!');
-          window.location.href = '/login.html'; // Redirect to login
+          window.location.href = '/login.html';
         } else {
-          const errorData = await response.json();
-          alert(errorData?.error || 'Logout failed. Please try again.');
+          alert(data.error || 'Logout failed! Please try again.');
         }
-      } catch (err) {
-        console.error('Logout Error:', err);
-        alert('Something went wrong while logging out.');
+      } catch (error) {
+        console.error('Logout Error:', error);
+        alert('Logout failed! Please try again.');
       }
     });
   }
