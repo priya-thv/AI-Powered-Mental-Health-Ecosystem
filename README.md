@@ -3,6 +3,8 @@
 **Luna** is a calm, emotionally present AI-powered therapist chatbot, while **Solara** is a compassionate journaling companion designed to guide users in self-expression, reflection, and emotional healing through writing. Together, they form a supportive AI ecosystem built to foster self-awareness, resilience, and peace.
 
 ---
+## 🚀 Live Demo
+👉 [Check it out here!]([https://brainbuddy-js5d.onrender.com])
 
 ## ✨ Features
 
