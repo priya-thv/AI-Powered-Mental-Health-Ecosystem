@@ -4,7 +4,7 @@
 
 ---
 ## 🚀 Live Demo
-👉 [Check it out here!]([https://brainbuddy-js5d.onrender.com])
+👉 [Check it out here!]([(https://brainbuddy-js5d.onrender.com)])
 
 ## ✨ Features
 
